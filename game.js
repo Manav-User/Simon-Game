@@ -4,20 +4,20 @@ var userClickedPattern=[];
 var level = 0;
 var start = false;
 
-$(document).keypress(function(){
+// $(document).keypress(function(){
+//     if(!start){
+//         $("#level-title").text("Level "+level);
+//         nextSequence();
+//         start=true;
+//     }
+// });
+$(document).on('keypress touchstart', function(){
     if(!start){
-        $("#level-title").text("Level "+level);
+        $("#level-title").text("Level " + level);
         nextSequence();
-        start=true;
+        start = true;
     }
 });
-$(document).on("tap",function(){
-    if(!start){
-        $("#level-title").text("Level "+level);
-        nextSequence();
-        start=true;
-    }
-})
 
 $(".btn").click(function(){
     var userChosenColour = $(this).attr("id");
